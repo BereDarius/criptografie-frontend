@@ -1,9 +1,9 @@
 import "../../index.css";
 import React, { useContext } from "react";
-import { UserContext } from "../../contexts/UserContext";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const Home = () => {
-	const { user } = useContext(UserContext);
+	const { user } = useContext(AuthContext);
 
 	return (
 		<div

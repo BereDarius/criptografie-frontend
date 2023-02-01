@@ -1,9 +1,6 @@
 // Styles
 import "./index.css";
 
-// Context
-import { UserProvider } from "./contexts/UserContext";
-
 // Containers
 import Home from "./containers/Home";
 import Login from "./containers/Login";
@@ -19,22 +16,20 @@ import Navbar from "./components/Navbar";
 
 function App() {
 	return (
-		<UserProvider>
-			<Router>
-				<div className="sticky top-0 z-10">
-					<Header />
-					<Navbar />
-				</div>
-				<Routes>
-					<Route exact path="/" element={<Home />} />
-					<Route path="/login" element={<Login />} />
-					<Route path="/register" element={<Register />} />
-					<Route path="/profile" element={<Profile />} />
-					<Route path="/dashboard" element={<Dashboard />} />
-					<Route path="*" element={<NotFound />} />
-				</Routes>
-			</Router>
-		</UserProvider>
+		<Router>
+			<div className="sticky top-0 z-10">
+				<Header />
+				<Navbar />
+			</div>
+			<Routes>
+				<Route exact path="/" element={<Home />} />
+				<Route path="/login" element={<Login />} />
+				<Route path="/register" element={<Register />} />
+				<Route path="/profile" element={<Profile />} />
+				<Route path="/dashboard" element={<Dashboard />} />
+				<Route path="*" element={<NotFound />} />
+			</Routes>
+		</Router>
 	);
 }
 

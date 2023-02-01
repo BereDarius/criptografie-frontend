@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import "../../index.css";
 import { Link } from "react-router-dom";
-import { UserContext } from "../../contexts/UserContext";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const Navbar = () => {
-	const { user, setUser } = useContext(UserContext);
+	const { user, logout } = useContext(AuthContext);
 
 	const handleLogout = () => {
-		setUser(null);
+		logout();
 	};
 
 	return (
@@ -19,6 +19,9 @@ const Navbar = () => {
 					</li>
 					<li className="pr-4 hover:text-blue-800">
 						<Link to="/profile">Profile</Link>
+					</li>
+					<li className="pr-4 hover:text-blue-800">
+						<Link to="/dashboard">Dashboard</Link>
 					</li>
 				</div>
 				{user ? (
